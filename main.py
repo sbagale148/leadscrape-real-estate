@@ -1,9 +1,9 @@
-from config import load_settings
+from config import load_settings, Settings
 from db import init_db
 
 
 def main() -> None:
-    settings = load_settings()
+    settings: Settings = load_settings()
     init_db(settings)
     # Extraction pipeline will be implemented in later milestones.
 

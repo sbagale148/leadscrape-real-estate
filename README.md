@@ -23,6 +23,14 @@ The pipeline sanitizes and normalizes the data, then stores it in a SQLite datab
 
 ---
 
+### Database (SQLite)
+
+- Uses a single SQLite database file (default: `leads.db` in the project root).
+- The main table is `frbo_leads` with columns defined in `proposal.md`.
+- You can override the database file location by setting `DB_PATH` in your `.env`.
+
+---
+
 ### Getting Started (Target)
 
 1. Create and activate a virtual environment:

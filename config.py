@@ -9,6 +9,7 @@ import os
 class Settings:
     rapidapi_key: str
     rapidapi_host: str
+    db_path: Path
 
 
 def load_settings() -> Settings:
@@ -18,6 +19,8 @@ def load_settings() -> Settings:
 
     key = os.getenv("RAPIDAPI_KEY", "")
     host = os.getenv("RAPIDAPI_HOST", "")
+    db_path_env = os.getenv("DB_PATH")
+    db_path = Path(db_path_env) if db_path_env else project_root / "leads.db"
 
-    return Settings(rapidapi_key=key, rapidapi_host=host)
+    return Settings(rapidapi_key=key, rapidapi_host=host, db_path=db_path)
 
